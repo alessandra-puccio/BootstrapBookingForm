@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - PR01 Ali Puccio</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!-- Import statements -->
+
+<head>
+  <script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/js/bootstrap.min.js'></script>
+  <link rel="stylesheet" href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/css/bootstrap.min.css' media="screen" />
+  <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.2/toastr.css" rel="stylesheet" />
+</head>
+
+<body>
+  <!-- Beginning of form -->
+  <div class="container">
+    <form class="form" id="form">
+      <h3 class="neg-margin" id="title">Bootstrap Booking Form:</h3>
+      <!-- Well with instructions -->
+
+      <div class="row">
+        <div class="col-md-12">
+          <div class="well well-md neg-margin">
+            <h7>Fill out the form and click the submit button when complete...</h7>
+          </div>
+        </div>
+      </div>
+
+      <!-- all of the panels -->
+      <div class=" row">
+        <!--Left column-->
+        <div class="col-md-6">
+          <!-- User pane -->
+          <div class="row ">
+            <!-- user panel row of left column -->
+            <div class="panel panel-primary">
+              <div class="panel-heading">User:</div>
+
+              <div class="panel-body ">
+
+                <div class="row form-group no-gutters">
+                  <label class="col-md-3 form-group ">Username:</label>
+                  <div class="col-md-8">
+                    <input class="form-control" id="uname" placeholder="Type username...">
+                  </div>
+                </div>
+                <div class="row form-group no-gutters">
+                  <label class="col-md-3 form-group">First Name:</label>
+                  <div class="col-md-8">
+                    <input class="form-control" id="fname" placeholder="Type first name...">
+                  </div>
+                </div>
+                <div class="row form-group no-gutters ">
+                  <label class="col-md-3 form-group">Last Name:</label>
+                  <div class="col-md-8">
+                    <input class="form-control" id="lname" placeholder="Type last name...">
+                  </div>
+                </div>
+
+              </div> <!-- close panel-body -->
+            </div> <!-- close user panel -->
+
+          </div> <!-- close user panel row within the left column -->
+
+          <div class="row">
+            <!-- row for contact panel within left column -->
+
+            <div class="panel panel-primary">
+              <div class="panel-heading">Contact:</div>
+              <div class="panel-body margined">
+
+                <div class="row form-group input-group">
+                  <div class="input-group-addon">
+                    <span class="glyphicon glyphicon-earphone"></span>
+                  </div>
+                  <input class="form-control" id="phoneNum" placeholder="Type phone #..." type="text" />
+                </div>
+
+                <div class="row form-group input-group">
+                  <div class="input-group-addon">
+                    <span class="glyphicon glyphicon-print"></span>
+                  </div>
+                  <input class="form-control" id="faxNum" placeholder="Type fax#..." type="text" />
+                </div>
+
+                <div class="row form-group input-group">
+                  <div class="input-group-addon">
+                    <span class="glyphicon glyphicon-envelope"></span>
+                  </div>
+                  <input class="form-control" id="email" placeholder="Type e-mail..." type="text" />
+                </div>
+              </div> <!-- close panel-body -->
+            </div> <!-- closes the contact panel -->
+          </div> <!-- closes contact panel row-->
+
+          <div class="row">
+            <!-- row for schedule panel within left column -->
+
+            <div class="panel panel-primary">
+              <div class="panel-heading">Schedule:</div>
+              <div class="panel-body margined">
+
+                <div class="row">
+                  <div class="col-md-12">
+                    <label>Adults:</label>
+                    <div class="form-group input-group-sm">
+                      <select class="form-control" id="adults">
+
+                        <option value="1"> 1</option>
+                        <option value="2"> 2</option>
+                        <option value="3"> 3</option>
+                        <option value="4"> 4</option>
+                        <option value="5"> 5</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- checkin/checkout -->
+                <div class="row">
+                  <!-- checkin -->
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label>Check-In:</label>
+                      <div class="input-group-sm">
+                        <input id="checkin" type="date" class="form-control col-md-12" oninput=totalDays()>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- checkout -->
+                  <div class="col-md-6 form-group">
+
+                    <label>Check-Out:</label>
+                    <div class="input-group-sm">
+                      <input id="checkout" type="date" class="col-md-12 form-control" oninput=totalDays()>
+                    </div>
+
+                  </div> <!-- check out close-->
+                </div>
+                <!--close check in / out row-->
+
+                <!-- row for days and cost-->
+                <div class="row">
+                  <div class="col-md-6 form-group">
+                    <label for"days">Days:</label>
+                    <input id="days" type="text" class="form-control" placeholder="Displays days..." readonly>
+                  </div>
+                  <div class="col-md-6 form-group">
+                    <label>Cost($):</label>
+                    <input id="cost" type="text" class="form-control" placeholder="Displays cost..." readonly>
+                  </div>
+
+                </div> <!-- close days and cost row -->
+
+              </div> <!-- close schedule panel body -->
+            </div> <!-- close schedule panel -->
+          </div> <!-- closes schedule panel row-->
+          <!--closes left column-md-6 -->
+
+        </div>
+
+        <!-- right column -->
+        <div class="col-md-6">
+          <div class="panel panel-primary ">
+            <div class="panel-heading">Other:</div>
+            <div class="panel-body">
+
+              <!-- message -->
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group message-box">
+                    <label>Message:</label>
+                    <textarea id="message" type="text" class="form-control" columns="50" rows="19" placeholder="Type message here..."></textarea>
+                  </div>
+                </div>
+              </div>
+
+              <!-- range bar -->
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+
+                    <label>Range:</label>
+                    <input id="range" type="range" class="form-range slider slider-horizontal" min="0" max="5" step="0.5">
+
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <br>
+              </div>
+
+              <!-- priority  -->
+              <label>Priority:</label>
+              <div class="row">
+                <div class="col-md-2">
+                  <input type="radio" id="low" name="priority" value="Low" checked>
+                  <label>Low</label><br>
+                </div>
+                <div class="col-md-2">
+                  <input type="radio" id="med" name="priority" value="Med">
+                  <label>Med</label><br>
+                </div>
+                <div class="col-md-2">
+                  <input type="radio" id="high" name="priority" value="High">
+                  <label>High</label>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+        <!-- end of right column -->
+
+      </div> <!-- closes row -->
+      <hr style="margin-top:0px;">
+      <!-- button code -->
+      <div class="col-md-offset-8">
+        <div class="row">
+          <!--reset button-->
+          <button class="btn btn-primary reset-button" type="reset" onclick="resetFields()">
+            <span class="glyphicon glyphicon-refresh"></span> Reset
+          </button>
+          <!-- submit button -->
+          <button class="btn btn-primary btn-success submit-button" type="submit" onclick="submitForm()">
+            <span class="glyphicon glyphicon-send"></span> Submit
+          </button>
+        </div>
+      </div>
+
+      <!-- end buttons -->
+    </form> <!-- closes form -->
+  </div> <!-- closes container -->
+
+</body>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.2/bootstrap3-typeahead.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
